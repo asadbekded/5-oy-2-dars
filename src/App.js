@@ -54,7 +54,6 @@ function App() {
                   <li className='todo-item'>
                     <input className='chekbox' data-id={item.id} type={'checkbox'}/>
                     <h3 className='todo-title'>{item.text}</h3>
-                    <span>{item.id}</span>
                     <button className='edit-button' data-id={item.id} type={'button'}>EDIT</button>
                     <button className='del-button' data-id={item.id} type={'button'}>DEL</button>
                   </li>
