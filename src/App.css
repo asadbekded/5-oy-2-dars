@@ -374,15 +374,14 @@ img{
 main{
    flex-grow: 1;
 }
-
+body{
+  background-color: #0456db;
+}
 .container{
    width: 100%;
    max-width: 1000px;
    margin: 0px auto;
    padding: 0px 20px;
-}
-.sect{
-  background-color: #0456db;
 }
 .todo-content{
   background-color: #0456db;

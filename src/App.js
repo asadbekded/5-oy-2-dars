@@ -31,7 +31,7 @@ function App() {
 
   return (
     <main>
-      <section className='sect'>
+      <section>
         <div className="container">
           <div className='todo-content'>
             <div className='todo-boxs'>
