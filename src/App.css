@@ -382,53 +382,50 @@ main{
    padding: 0px 20px;
 }
 .todo-content{
+  margin-top: 10px;
+  background-color: #0456db;
+  border-radius: 20px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.todo-boxs{
+  width: 100%;
+  max-width: 500px;
+  margin: 0px auto;
+}
+.work-title{
+  font-family: "Arial";
   text-align: center;
+  margin: 0px;
 }
 .todo-form{
-  margin-top: 20px;
-}
-.todo-inp{
-  border-radius: 10px;
-  padding: 8px 0px 8px 10px;
-}
-.todo-list{
-  margin: 0px;
-  padding: 0px;
-  list-style: none;
-  margin-top: 20px;
-}
-.todo-item{
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  background-color: #fff3f3da;
+  margin-top: 20px;
+  border-radius: 20px;
+  padding-left: 10px;
+}
+.todo-inp{
+  width: 100%;
+  max-width: 420px;
+  border-radius: 10px;
+  padding: 8px 0px 8px 10px;
+  border: none;
 }
 .send-button{
-  background-color: #0456db;
-  color: #fff;
+  background-color: transparent;
   border: none;
-  padding: 8px 15px 8px;
-  border-radius: 10px;
-  margin-left: 10px;
+  padding: 10px 15px 10px;
+  margin-left: 0px;
 }
-.chekbox{
-  margin-right: 14px;
+.no-img{
+  display: block;
+  margin: 0px auto;
 }
-.edit-button{
-  background-color: #005cf1;
-  color: #fff;
-  border: none;
-  padding: 6px 12px 6px;
-  border-radius: 10px;
-  margin-left: 15px;
-}
-.del-button{
-  background-color: #f10000;
-  color: #fff;
-  border: none;
-  padding: 6px 12px 6px;
-  border-radius: 10px;
-  margin-left: 15px;
-}
-.todo-title{
-  margin: 0px;
+
+.todo-list{
+  list-style: none;
+  padding: 0px;
+  margin-top: 20px;
 }

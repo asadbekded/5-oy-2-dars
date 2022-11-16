@@ -1,70 +1,75 @@
 import './App.css';
-import {useState} from 'react';
+import { List } from './components/List';
+import { Listitem } from './components/Listitem';
+import {useState , useRef} from 'react';
+import Send from './assets/images/send-message.png';
+import Anima from './assets/images/Spin-1.2s-200px.svg';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   // holat
-  let [value, setValue] = useState("");
-  let [todos, setTodos] = useState([]);
-
-  let getList = (evt) => {
-    if(evt.target.matches('.chekbox')){
-      console.log(evt.target.dataset.id);
-      let todos = +evt.target.dataset.id;
-      let findedItem = todos.find((el) => el.id = todos)
-      findedItem.isComplate = !findedItem.isComplate
-      console.log(findedItem);
-      // setTodos(findedItem);
-    }
-  };
-
-  // inputni valuesini olish
-  let getInpValue = (evt) => {
-    setValue(evt.target.value);
-  };
+  let [todos, setTodos] = useState(JSON.parse(window.localStorage.getItem('todos')) || []);
+  const inputValue = useRef()
 
   // form submit bolishi
 
   let formSubmit = (evt) => {
     evt.preventDefault();
-    setTodos([...todos,
-      {
-        id: todos.length ? todos[todos.length - 1].id + 1 : 1,
-        text: value,
-        isCompleted: false,
-      }
-    ]);
-  }
+    const newTodo = {
+      // id: todos.length ? todos[todos.length - 1].id + 1 : 1,
+      id: todos.length ? todos.at(-1).id + 1 : 1,
+      text: inputValue.current.value,
+      isCompleted: false,
+    };
+    setTodos([...todos, newTodo]);
+    inputValue.current.value = '';
+    toast.success("Todo muvofaqiyatli qo'shildi 👍");
+  };
 
+  window.localStorage.setItem('todos', JSON.stringify(todos));
 
-
-  // domga htmlga chiqarish
   return (
     <main>
       <section>
         <div className="container">
           <div className='todo-content'>
+            <div className='todo-boxs'>
+            <h1 className='work-title'>Todo work</h1>
             <form onSubmit={formSubmit} className='todo-form' method='post'>
-              <input onChange={getInpValue} className='todo-inp' type={'text'} placeholder='Todo'/>
-              <button className='send-button' type={'submit'}>Send</button>
+              <input ref={inputValue} className='todo-inp' type={'text'} placeholder='Todo'/>
+              <button className='send-button' type={'submit'}>
+               <img src={Send} alt='delete.img' width={36} height={30}/>
+              </button>
             </form>
-
-            <ul onChange={getList} className='todo-list'>
-              {
-                todos.map(item => (
-                  <li className='todo-item'>
-                    <input className='chekbox' data-id={item.id} type={'checkbox'}/>
-                    <h3 className='todo-title'>{item.text}</h3>
-                    <button className='edit-button' data-id={item.id} type={'button'}>EDIT</button>
-                    <button className='del-button' data-id={item.id} type={'button'}>DEL</button>
-                  </li>
-                ))
-              }
-            </ul>
+            {
+              todos.length ? (
+                <List>
+                  {
+                    todos.map(item => (
+                      <Listitem key={item.id} obj={item} todos={todos} setTodos={setTodos}/>
+                    ))
+                  }
+                </List>
+              ) : (<img className='no-img' src={Anima} alt='delete.img' width={150} height={100}/>)
+            };
+            </div>
           </div>
+          <ToastContainer 
+           position="bottom-right"
+           autoClose={3000}
+           hideProgressBar={false}
+           newestOnTop={false}
+           closeOnClick
+           rtl={false}
+           pauseOnFocusLoss
+           draggable
+           pauseOnHover
+           theme="dark"
+          />
         </div>
       </section>
     </main>
   );
 }
-
 export default App;

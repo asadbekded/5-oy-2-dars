@@ -1,0 +1,46 @@
+.todo-item{
+   width: 100%;
+   max-width: 500px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   background-color: #fff3f3da;
+   padding: 5px 0px;
+   border-radius: 20px;
+   padding-left: 6px;
+}
+.just{
+   display: flex;
+}
+.chekbox{
+   margin-right: 14px;
+}
+.edit-button{
+   background-color: transparent;
+   border: none;
+}
+.del-button{
+   background-color: transparent;
+   border: none;
+   margin-left: 0px;
+}
+.todo-title{
+   font-family: "Arial";
+   margin: 0px;
+}
+.chec{
+   text-decoration: line-through;
+   color: #f10000;
+}
+.span-id{
+   font-family: 'Arial';
+   text-align: center;
+   background-color: #005cf1;
+   padding: 4px 8px 3px;
+   border-radius: 50%;
+   color: #fff;
+   margin: 0px;
+   margin-right: 15px;
+}
