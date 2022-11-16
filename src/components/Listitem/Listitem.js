@@ -40,7 +40,7 @@ export let Listitem = ({ obj, todos, setTodos }) => {
            <button disabled={isCompleted ? true : false} onClick={() => handleEditTodo(id, text)} className='edit-button' type={'button'}>
             <img src={Edit} alt='delete.img' width={30} height={25}/>
            </button>
-           <button disabled={isCompleted ? true : false} onClick={() => handleDeletTodo(id)} className='del-button' type={'button'}>
+           <button onClick={() => handleDeletTodo(id)} className='del-button' type={'button'}>
             <img src={Delete} alt='delete.img' width={30} height={25}/>
            </button>
          </div>
