@@ -381,11 +381,13 @@ main{
    margin: 0px auto;
    padding: 0px 20px;
 }
+.sect{
+  background-color: #0456db;
+}
 .todo-content{
-  margin-top: 10px;
   background-color: #0456db;
   border-radius: 20px;
-  padding-top: 10px;
+  padding-top: 15px;
   padding-bottom: 20px;
 }
 .todo-boxs{
